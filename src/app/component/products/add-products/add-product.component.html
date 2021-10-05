@@ -1,0 +1,50 @@
+
+<br>
+<h5 style="margin-left: 540px"><font color="red"> &nbsp;&nbsp;&nbsp;{{errorMessage}}</font></h5>
+<br> 
+
+<div class="reglist">
+    <form novalidate [formGroup]="addProductForm" style="margin-top: 50px;margin-left: 550px;width: 340px;" (ngSubmit)="addProduct()">
+  <fieldset>
+  
+      <div class="form-group">
+        <label>Product Name:</label>
+        <input type="text" class="form-control" formControlName="prodName">
+        <div class="alert alert-danger"
+            *ngIf="addProductForm.get('prodName').hasError('required') && addProductForm.get('prodName').dirty">
+            Product Name is required
+        </div>
+    </div><br>
+
+    <div class="form-group">
+        <label>Price:</label>
+        <input type="number" class="form-control" formControlName="prodPrice">
+        <div class="alert alert-danger"
+            *ngIf="addProductForm.get('prodPrice').hasError('required') && addProductForm.get('prodPrice').dirty">
+            Price is required
+        </div>
+        <div class="alert alert-danger"
+        *ngIf="addProductForm.get('prodPrice').hasError('isnegative') && addProductForm.get('prodPrice').dirty">
+        Price should not be neagtive
+    </div>
+    </div><br>
+
+    <div class="form-group">
+        <label>Category:</label>
+        <input type="text" class="form-control" formControlName="category">
+        <div class="alert alert-danger"
+            *ngIf="addProductForm.get('category').hasError('required') && addProductForm.get('category').dirty">
+            Category is required
+        </div>
+    </div><br>
+
+
+    <td>
+        <button type="submit" class="btn btn-primary" [disabled] ="addBranchForm.invalid" style="margin-left: 30px">Add Product</button>&nbsp;&nbsp;
+        <button class="btn btn-success" type="reset">Clear</button>&nbsp;&nbsp;
+        <button  class="btn btn-info" (click)="back()">Back</button>&nbsp;&nbsp;
+    </td>
+    <br><br>
+    </fieldset>
+    </form>
+</div>
