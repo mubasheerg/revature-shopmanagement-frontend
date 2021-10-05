@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'shopmanagement-app';
 
-
 constructor(public router:Router){}
   ngOnInit(): void {
     this.router.navigate(['home']) 

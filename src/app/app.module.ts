@@ -13,6 +13,7 @@ import { EditOrderComponent } from './component/order/edit-order/edit-order.comp
 import { ViewAllOrderComponent } from './component/order/view-all-order/view-all-order.component';
 import { HomeComponent } from './component/home/home.component';
 import { AddProductComponent } from './component/products/add-products/add-product.component';
+import { AdminDashboardComponent } from './component/admin/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddProductComponent } from './component/products/add-products/add-produ
     AdminLoginComponent,CustomerLoginComponent,
     AddOrderComponent,EditOrderComponent,ViewAllOrderComponent,
     AddProductComponent,EditProductComponent,ViewAllProductComponent,
-    HomeComponent
+    HomeComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

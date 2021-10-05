@@ -17,6 +17,7 @@ errorMessage?:string;
 customer?:Customer;
 resetPassword?:boolean;
 login?:boolean;
+getEmailForm?:FormGroup;
 
   constructor(public activatedRoute :ActivatedRoute,public customerService:CustomerService,public formBuilder:FormBuilder,public router: Router) { }
 
@@ -26,7 +27,10 @@ login?:boolean;
       custMail: ['', [Validators.required,Validators.email ]],
       password: ['', [Validators.required ,Validators.minLength(6)]],
   })
-   }
+  this.getEmailForm = this.formBuilder.group({
+    email: ['', [Validators.required,Validators.email ]]
+  })  
+}
 
 
    customerLogin(){
@@ -44,9 +48,9 @@ login?:boolean;
        }
      )
    }
-   forgetPassword()
+   /* forgetPassword()
    {
-     this.customerService.getCustomerByEmail(this.getEmailForm.get('email').value).subscribe(data=>
+     this.customerService.getCustomerByMail(this.getEmailForm.get('email').value).subscribe(data=>
        {
          if(data!=null){
            this.customerService.forgetPassword(this.getEmailForm.get('email').value).subscribe(
@@ -63,7 +67,7 @@ login?:boolean;
        }
        })
  
-   }
+   } */
    updated(){
      Swal.fire('Success', 'Your password sent to your Mail ', 'success')
    }

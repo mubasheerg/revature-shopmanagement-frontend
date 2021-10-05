@@ -52,6 +52,6 @@ successNotification(){
   Swal.fire('Success','Product Added Successfully','success')
 }
 back(){
-  this.router.navigate([''])
+  this.router.navigate(['adminDashboard'])
 }
 }
